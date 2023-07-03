@@ -6,6 +6,7 @@ import os.path
 app = Flask(__name__)
 app.secret_key = "b_itu!_'Ggmñp"
 
+@app.route('/')
 def index():
     db = get_db()
     return render_template("index.html", the_data=db)
