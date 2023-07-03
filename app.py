@@ -8,7 +8,7 @@ app.secret_key = "b_itu!_'Ggmñp"
 @app.route("/")
 def index():
     db = get_db()
-    return render_template("index.html", all_data)
+    return render_template("index.html", the_data=data)
 
 def get_db():
     db = getattr(g, '_database', None)
