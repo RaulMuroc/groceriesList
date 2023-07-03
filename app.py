@@ -1,6 +1,7 @@
 import sqlite3
 import random
 from flask import Flask, session, render_template, request, g
+import os.path
 
 app = Flask(__name__)
 app.secret_key = "b_itu!_'Ggmñp"
@@ -11,12 +12,14 @@ def index():
 
 @app.route("/add_items", methods=["post"])
 def add_items():
-    return request.form["list_of_items]
+    return request.form["list_of_items"]
 
 def get_db():
     db = getattr(g, '_database', None)
     if db is None:
-        db = g._database = sqlite3.connect('grocery_list.db')
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        db_path = os.path.join(BASE_DIR, "grocery_list.db")
+        db = g._database = sqlite3.connect(db_path)
         cursor = db.cursor()
         cursor.execute("select name from groceries")
         all_data = cursor.fetchall()
