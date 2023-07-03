@@ -15,6 +15,10 @@ def index():
 def add_items():
     return request.form["list_of_items"]
 
+@app.route("/remove_items", methods=["post"])
+def remove_items():
+    return request.form["list_of_items"]
+
 def get_db():
     db = getattr(g, '_database', None)
     if db is None:
