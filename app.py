@@ -27,8 +27,8 @@ def get_db():
         all_data = [str(val[0]) for val in all_data]
         shopping_list = all_data.copy()
         random.shuffle(shopping_list)
-        shopping_list
-    return all_data
+        shopping_list = shopping_list[:5]
+    return all_data, shopping_list
 
 @app.teardown_appcontext
 def close_connection(exception):
