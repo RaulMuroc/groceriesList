@@ -11,7 +11,7 @@ def index():
 
 @app.route("/add_items", methods=["post"])
 def add_items():
-    return request.form
+    return request.form["list_of_items]
 
 def get_db():
     db = getattr(g, '_database', None)
