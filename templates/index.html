@@ -9,8 +9,9 @@
         <form action="/add_items" method="POST">
             <select name="select_items">
                 {% for item in the_data %}
-                <p>{{ item }}</p>
-                <option value="apples">apples</option>
+                <option value="{{ item }}">{{ item }}</option>
+                {% endfor %}
+
             </select>
         </form>
     </div>
