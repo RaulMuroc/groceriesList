@@ -25,6 +25,9 @@ def get_db():
         cursor.execute("select name from groceries")
         all_data = cursor.fetchall()
         all_data = [str(val[0]) for val in all_data]
+        shopping_list = all_data.copy()
+        random.shuffle(shopping_list)
+        shopping_list
     return all_data
 
 @app.teardown_appcontext
