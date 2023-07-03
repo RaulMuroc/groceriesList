@@ -8,7 +8,7 @@
     <!-- remove items form -->
     <div id="remove_item">
         <form action="/remove_items" method="POST">
-            <select name="list_of_items">
+            <select name="shopping_list">
                 {% for item in shopping_items %}
                 <input type="checkbox" name="check" id="{{item}}" value="{{item}}">
                <label for="{{items}}" name="{{item}}">{{item}}</label><br>
