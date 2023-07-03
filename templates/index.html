@@ -11,9 +11,9 @@
             <select name="list_of_items">
                 {% for item in shopping_items %}
                 <input type="checkbox" name="check" id="{{item}}" value="{{item}}">
-               <label for="{{items}}" name="{{item}}">{{item}}</label>
+               <label for="{{items}}" name="{{item}}">{{item}}</label><br>
                 {% endfor %}
-                <input type="submit" value="ADD ITEM">
+                <input type="submit" value="REMOVE ITEMS">
             </select>
         </form>
     </div>
