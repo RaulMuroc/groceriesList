@@ -8,8 +8,8 @@ app.secret_key = "b_itu!_'Ggmñp"
 
 @app.route('/')
 def index():
-    the_data, shopping_list = get_db()
-    return render_template("index.html", the_data=the_data, shopping_list=shopping_list)
+    session["the_data"], session["shopping_list"} = get_db()
+    return render_template("index.html", the_data=session["the_data"], shopping_list=session["shopping_list"])
 
 @app.route("/add_items", methods=["post"])
 def add_items():
