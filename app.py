@@ -14,8 +14,8 @@ def index():
 
 @app.route("/add_items", methods=["post"])
 def add_items():
-    session["shopping_list"].append(request.form["the_data"])
-    return request.form["list_of_items"]
+    session["shopping_list"].append(request.form["list_of_items"])
+    return render_template("index.html", the_data=session["the_data"], shopping_list=session["shopping_list"])
 
 @app.route("/remove_items", methods=["post"])
 def remove_items():
