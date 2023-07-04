@@ -20,7 +20,7 @@ def add_items():
 @app.route("/remove_items", methods=["post"])
 def remove_items():
     checked_boxes = request.form.getlist("list_remove_items")
-    for item un checked_boxes:
+    for item in checked_boxes:
         if item in session["shopping_list"]:
             remove_index = session["shopping_list"].index(item)
             session["shopping_list"].pop(remove_index)
