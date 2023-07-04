@@ -14,12 +14,12 @@ def index():
 
 @app.route("/add_items", methods=["post"])
 def add_items():
-    session["shopping_list"].append(request.form["list_of_items"])
+    session["shopping_list"].append(request.form["list_of_itemss"])
     return request.form["list_of_items"]
 
 @app.route("/remove_items", methods=["post"])
 def remove_items():
-    return request.form["list_of_items"]
+    return request.form["shopping_list"]
 
 def get_db():
     db = getattr(g, '_database', None)
