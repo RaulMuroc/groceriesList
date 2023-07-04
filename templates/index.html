@@ -21,15 +21,15 @@
     <div id="add_item">
         <form action="/add_items" method="POST">
             <select name="list_of_items">
-                {% for item in the_data %}
+                {% for item in shopping_list %}
                 <option value="{{ item }}">{{ item }}</option>
                 {% endfor %}
                 <input type="submit" value="ADD ITEM">
             </select>
         </form>
     </div>
-    <!-- {% for item in the_data %}
+     {% for item in the_data %}
     <p>{{ item }}</p>
-    {% endfor %} -->
+    {% endfor %}
 </body>
 </html>

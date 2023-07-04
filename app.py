@@ -5,10 +5,11 @@ import os.path
 
 app = Flask(__name__)
 app.secret_key = "b_itu!_'Ggmñp"
+app.config["SESSION_COOKIE_NAME"] = "this_is_the_name_of_my_cookie"
 
-@app.route('/')
+@app.route('/', methods=["POST", "GET"])
 def index():
-    session["the_data"], session["shopping_list"} = get_db()
+    session["the_data"], session["shopping_list"] = get_db()
     return render_template("index.html", the_data=session["the_data"], shopping_list=session["shopping_list"])
 
 @app.route("/add_items", methods=["post"])
