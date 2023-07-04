@@ -10,7 +10,7 @@
         <form action="/remove_items" method="POST">
             <select name="shopping_list">
                 {% for item in shopping_items %}
-                <input type="checkbox" name="check" id="{{item}}" value="{{item}}">
+                <input type="checkbox" name="list_remove_items" id="{{item}}" value="{{item}}">
                <label for="{{items}}" name="{{item}}">{{item}}</label><br>
                 {% endfor %}
                 <input type="submit" value="REMOVE ITEMS">
